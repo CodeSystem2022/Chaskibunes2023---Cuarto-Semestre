@@ -1,5 +1,9 @@
 # Chaskibunes2023 ~ Cuarto-Semestre
 
+<br><strong>
+Aquí esta el enlace a la wiki del brief para el desarrollo del ecommerce: https://github.com/CodeSystem2022/Chaskibunes2023---Cuarto-Semestre/wiki/Brief-ecommerce</br></strong>
+<br><strong>
+
 ## `Integrantes`
 
 :large_orange_diamond:  Gabriel Muñoz
