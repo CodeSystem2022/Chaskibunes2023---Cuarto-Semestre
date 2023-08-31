@@ -1,7 +1,7 @@
 package utn.estudiantes.repositorio;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import utn.estudiantes.modelo.Estudiante;
+import utn.estudiantes.modelo.Estudiantes2022;
 
-public interface EstudiantesRepositorio extends JpaRepository<Estudiante, Integer> {
+public interface EstudiantesRepositorio extends JpaRepository<Estudiantes2022, Integer> {
 }
