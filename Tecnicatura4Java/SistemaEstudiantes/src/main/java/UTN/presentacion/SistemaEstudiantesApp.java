@@ -23,7 +23,9 @@ public class SistemaEstudiantesApp {
             } catch(Exception e){ //Fin del try
                 System.out.println("Ocurrio un error al ejecutar la operación: "+e.getMessage());
             } //Fin del catch
-        } // Fin while
+        } 
+        // Fin while
+
         var conexion = Conexion.getConnection();
         if(conexion != null)
             System.out.println("Conexión exitosa: "+conexion);
@@ -42,11 +44,13 @@ public class SistemaEstudiantesApp {
                 6. Salir
                 """);
     }
-// Método para ejecutar las opciones, va a regresar un valor booleano, ya que es el que
+
+    // Método para ejecutar las opciones, va a regresar un valor booleano, ya que es el que
     // Puede modificar el valor de la variable salir, si es verdadero termina el ciclo While
     private static boolean ejecutarOpciones(Scanner consola, EstudianteDAO estudianteDAO){
         var opcion = Integer.parseInt(consola.nextLine()); 
         var salir = false;
+
         switch(opcion){
             case 1 -> { //Listar estudiantes
                 System.out.println("Listado de Estudiantes...");
@@ -54,7 +58,9 @@ public class SistemaEstudiantesApp {
                 var estudiantes = estudianteDAO.listarEstudiantes(); //recibe el listado
                 //Vamos a iterar cada objeto de tipo estudiante
                 estudiantes.forEach(System.out::println);
-            }//Fin caso 1
+            }
+            //Fin caso 1
+
             case 2 -> { //Buscar estudiante por id
                 System.out.println("Introduce el id_estudiante a buscar: ");
                 var idEstudiante = Integer.parseInt(consola.nextLine());
@@ -65,7 +71,9 @@ public class SistemaEstudiantesApp {
                 } else{
                     System.out.println("Estudiante NO encontrado: "+estudiante);
                 }
-            } //Fin caso 2
+            }
+            //Fin caso 2
+
             case 3 -> { //Agregar estudiante
                 System.out.println("Agregar estudiante: ");
                 System.out.println("Nombre: ");
@@ -84,7 +92,9 @@ public class SistemaEstudiantesApp {
                 } else{
                     System.out.println("Estudiante NO agregado: "+estudiante);
                 }
-            }//Fin caso 3
+            }
+            //Fin caso 3
+
             case 4 -> { //Modificar estudiante
                 System.out.println("Modificar estudiante: ");
                 //Aquí lo primero es especificar cual es el id del objeto a modificar
@@ -106,7 +116,9 @@ public class SistemaEstudiantesApp {
                 } else{
                     System.out.println("Estudiante NO modificado: "+estudiante);
                 }
-            }//Fin caso 4
+            }
+            //Fin caso 4
+
             case 5 -> { //Eliminar estudiante
                 System.out.println("Eliminar estudiante: ");
                 System.out.println("Id Estudiante: ");
@@ -118,13 +130,21 @@ public class SistemaEstudiantesApp {
                 } else {
                     System.out.println("Estudiante NO eliminado: "+estudiante);
                 }
-            } //Fin caso 5 
+            } 
+            //Fin caso 5 
+
             case 6 -> { //Salir
                 System.out.println("Hasta pronto!!!");
                 salir = true;
-            }//Fin caso 6
+            }
+            //Fin caso 6
+
             default -> System.out.println("Opción no reconocida, ingrese otra opción");
-        } //Fin switch
+        } 
+        //Fin switch
+
         return salir;
+
     }
-}//Fin clase
+}
+//Fin clase

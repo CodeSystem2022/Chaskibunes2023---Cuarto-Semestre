@@ -90,10 +90,9 @@ public class EstudianteDAO {
             ps.setString(4, estudiante.getEmail());
             ps.execute();
             return true;
-
         } catch (Exception e) {
             System.out.println("Ocurrio un error al agregar el estudiante: " + e.getMessage());
-        } // FIn catch
+        } // Fin catch
         finally {
             try {
                 con.close();
@@ -101,7 +100,9 @@ public class EstudianteDAO {
                 System.out.println("Ocurrio un error al cerrar la conexión: " + e.getMessage());
             } // Fin catch
         } // Fin finally
+
         return false;
+
     }// Fin método agregarEstudiante
 
     // Método para modificar estudiante
@@ -120,7 +121,7 @@ public class EstudianteDAO {
             return true;
         } catch (Exception e) {
             System.out.println("Error al modificar estudiante: " + e.getMessage());
-        } // FIn catch
+        } // Fin catch
         finally {
             try {
                 con.close();
@@ -131,6 +132,7 @@ public class EstudianteDAO {
         return false;
     } // Fin métedo modificarEstudiante
 
+    //Metodo para eliminar un estudiante
     public boolean eliminarEstudiante(Estudiante estudiante) {
         PreparedStatement ps;
         Connection con = getConnection();
