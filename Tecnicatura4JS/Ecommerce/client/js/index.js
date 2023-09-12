@@ -1,3 +1,4 @@
+
 const shop = document.getElementById("shopContent");
 const cart = []; //Este es nuestro carrito, un array vacio
 
@@ -24,6 +25,7 @@ productos.forEach((product) => {
       cart.map((prod) => {
         if (prod.id === product.id) {
           prod.quanty++;
+          displayCartCounter();
         }
       });
     } else {
@@ -34,6 +36,7 @@ productos.forEach((product) => {
         quanty: product.quanty,
         img: product.img,
       });
+      displayCartCounter();
     }
   });
 });
