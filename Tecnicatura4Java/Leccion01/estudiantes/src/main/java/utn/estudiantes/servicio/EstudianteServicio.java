@@ -10,27 +10,27 @@ import java.util.List;
 @Service
 public class EstudianteServicio implements IEstudianteServicio {
     @Autowired
-    private EstudiantesRepositorio estudiantesRepositorio;
+    private EstudiantesRepositorio estudiantesRepositorio; 
 
     @Override
-    public List<Estudiantes2022> listarEstudiantes() {
-        List<Estudiantes2022> estudiante = estudiantesRepositorio.findAll();
-        return estudiante;
+    public List<Estudiantes2022> listarEstudiantes() { 
+        List<Estudiantes2022> estudiante = estudiantesRepositorio.findAll(); 
+        return estudiante; 
     }
 
     @Override
-    public Estudiantes2022 buscarEstudiantePorId(Integer idEstudiante) {
+    public Estudiantes2022 buscarEstudiantePorId(Integer idEstudiante) { 
         Estudiantes2022 estudiante = estudiantesRepositorio.findById(idEstudiante).orElse(null);
-        return estudiante;
+        return estudiante; 
     }
 
     @Override
-    public void guardarEstudiante(Estudiantes2022 estudiante) {
-        estudiantesRepositorio.save(estudiante);
+    public void guardarEstudiante(Estudiantes2022 estudiante) { 
+        estudiantesRepositorio.save(estudiante); 
     }
 
     @Override
-    public void eliminarEstudiante(Estudiantes2022 estudiante) {
-        estudiantesRepositorio.delete(estudiante);
-    }
+    public void eliminarEstudiante(Estudiantes2022 estudiante) { 
+        estudiantesRepositorio.delete(estudiante); 
+    } 
 }
