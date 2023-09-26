@@ -22,11 +22,11 @@ const productos = [
     img: "./media/ipad-air.jpg",
   },
   {
-    id: "4",
-    productName: "Apple Watch Series 7",
-    price: 500,
-    quanty: 1,
-    img: "./media/applewatch.jpg",
+    id: "4", 
+    productName: "Apple Watch Series 7", 
+    price: 500, 
+    quanty: 1, 
+    img: "./media/applewatch.jpg", 
   },
 ];
 

@@ -137,21 +137,21 @@ const displayCart = () => {
   }
 };
 
-cartBtn.addEventListener("click", displayCart);
+cartBtn.addEventListener("click", displayCart); 
 
-const deleteCartProducto = (id) => {
-  const foundId = cart.findIndex((element) => element.id === id);
-  cart.splice(foundId, 1);
-  displayCart();
-  displayCartCounter();
-};
+const deleteCartProducto = (id) => { 
+  const foundId = cart.findIndex((element) => element.id === id); 
+  cart.splice(foundId, 1); 
+  displayCart(); 
+  displayCartCounter(); 
+}; 
 
-const displayCartCounter = () => {
-  const cartLength = cart.reduce((acc, el) => acc + el.quanty, 0);
-  if (cartLength > 0) {
-    cartCounter.style.display = "block";
-    cartCounter.innerText = cartLength;
-  } else {
-    cartCounter.style.display = "none";
-  }
-};
+const displayCartCounter = () => { 
+  const cartLength = cart.reduce((acc, el) => acc + el.quanty, 0); 
+  if (cartLength > 0) { 
+    cartCounter.style.display = "block"; 
+    cartCounter.innerText = cartLength; 
+  } else { 
+    cartCounter.style.display = "none"; 
+  } 
+}; 
