@@ -1,9 +1,9 @@
 import express from "express";
 import morgan from "morgan";
-import authRoutes from '../router/auth.routes';
-import tareaRoutes from '../router/tareas.routes';
+import authRoutes from '../router/auth.routes.js';
+import tareaRoutes from '../router/tareas.routes.js';
 const app = express();
-
+//middlewares
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
@@ -13,7 +13,7 @@ app.get("/", (req, res) =>
 );
 
 app.use('/api',tareaRoutes);
-app.use('/api',authRoutes);
+app.use('/api', authRoutes);
 
 //Manejando errores
 app.use((err, req, res, next) => {

@@ -4,7 +4,7 @@ import {
     signin,
     signout,
     signup,
-} from "../controllers/auth.controllers";
+} from "../controllers/auth.controllers.js";
 
 const router = Router();
 
