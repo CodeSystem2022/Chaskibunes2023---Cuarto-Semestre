@@ -14,7 +14,6 @@ import java.util.Scanner;
 
 @SpringBootApplication
 public class EstudiantesApplication implements CommandLineRunner {
-
 	@Autowired
 	private EstudianteServicio estudianteServicio;
 	private  static  final Logger logger =
