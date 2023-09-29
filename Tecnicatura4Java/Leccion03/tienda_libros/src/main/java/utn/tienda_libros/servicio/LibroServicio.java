@@ -9,7 +9,6 @@ import java.util.List;
 
 @Service
 public class LibroServicio implements ILibroServicio{
-
     @Autowired
     private LibroRepositorio libroRepositorio;
 
