@@ -1,4 +1,6 @@
-import { Router } from "express";
+import Router from "express-promise-router";
+import { isAuth } from "../middlewares/auth.middlaware.js";
+
 import {
     profile,
     signin,
@@ -14,6 +16,6 @@ router.post("/signup", signup);
 
 router.post("/signout", signout);
 
-router.post("/profile", profile);
+router.get("/profile", isAuth, profile);
 
 export default router;

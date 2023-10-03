@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser';
 import express from "express";
 import morgan from "morgan";
 import authRoutes from '../router/auth.routes.js';
@@ -5,6 +6,7 @@ import tareaRoutes from '../router/tareas.routes.js';
 const app = express();
 //middlewares
 app.use(morgan("dev"));
+app.use(cookieParser());
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 
