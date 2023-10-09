@@ -45,7 +45,7 @@ urlpatterns = [
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) 
 
-# Configuración del panel de administración
+# Configuración del panel de administración.
 admin.site.site_header = "Virginia Castellano"
 admin.site.site_title = "Virginia Castellano"
 admin.site.site_index_title = "Welcome to Virginia Castellano Shop"
