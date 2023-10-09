@@ -6,7 +6,7 @@ from django.contrib.auth.forms import (
 from django.contrib.auth.models import User
 from . models import Customer
 
-# Formulario de inicio de sesión
+# Formulario de inicio de sesión.
 class LoginForm(AuthenticationForm):
     username = UsernameField(widget=forms.TextInput(attrs={'autofocus':'True','class': 'form-control'}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))
