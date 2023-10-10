@@ -48,22 +48,22 @@ export const signup = async (req, res, next) => {
       sameSite: "none",
       maxAge: 60 * 60 * 24 * 1000,
     }); //1 day
-    return res.json(result.rows[0]);
-  } catch (error) {
-    if (error.code === "23505") {
-      return res.status(400).json({ message: "El correo ya esta registrado" });
-    }
-    next(error);
+    return res.json(result.rows[0]); 
+  } catch (error) { 
+    if (error.code === "23505") { 
+      return res.status(400).json({ message: "El correo ya esta registrado" }); 
+    } 
+    next(error); 
   }
 };
-
-export const signout = (req, res) => {
-  res.clearCookie("token");
-  return res.json({ message: "sesión cerrada" });
-};
-
-export const profile = async (req, res) => {
-  const result = await pool.query("SELECT * FROM usuarios WHERE id = $1", [
-    req.usuarioId,
-  ]);
-};
+ 
+export const signout = (req, res) => { 
+  res.clearCookie("token"); 
+  return res.json({ message: "sesión cerrada" }); 
+}; 
+ 
+export const profile = async (req, res) => { 
+  const result = await pool.query("SELECT * FROM usuarios WHERE id = $1", [ 
+    req.usuarioId, 
+  ]); 
+}; 
