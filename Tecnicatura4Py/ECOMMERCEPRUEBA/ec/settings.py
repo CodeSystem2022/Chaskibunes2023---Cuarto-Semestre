@@ -125,7 +125,7 @@ LOGIN_REDIRECT_URL='/profile/'
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-EMAIL_BACKEND= "django.core.mail.backends.console.EmailBackend"
-# FORMA DE PAGO
-RAZOR_KEY_ID='ACA VA EL ID DA LA PAG '
-RAZOR_KEY_SECRET='ACA VA LA CONTRASEÑA SECRETA'
+EMAIL_BACKEND= "django.core.mail.backends.console.EmailBackend" 
+# FORMA DE PAGO 
+RAZOR_KEY_ID='ACA VA EL ID DA LA PAG ' 
+RAZOR_KEY_SECRET='ACA VA LA CONTRASEÑA SECRETA' 

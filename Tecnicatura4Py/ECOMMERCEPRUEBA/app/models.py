@@ -14,12 +14,12 @@ STATE_CHOICES = (
     ('Entre Ríos', 'Entre Ríos'),
     ('Formosa', 'Formosa'),
     ('Jujuy', 'Jujuy'),
-    ('La Pampa', 'La Pampa'),
-    ('La Rioja', 'La Rioja'),
-    ('Mendoza', 'Mendoza'),
-    ('Misiones', 'Misiones'),
-    ('Neuquén', 'Neuquén'),
-    ('Río Negro', 'Río Negro'),
+    ('La Pampa', 'La Pampa'), 
+    ('La Rioja', 'La Rioja'), 
+    ('Mendoza', 'Mendoza'), 
+    ('Misiones', 'Misiones'), 
+    ('Neuquén', 'Neuquén'), 
+    ('Río Negro', 'Río Negro'), 
     ('Salta', 'Salta'),
     ('San Juan', 'San Juan'),
     ('San Luis', 'San Luis'),
@@ -57,8 +57,8 @@ class Customer(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length=200)
     locality = models.CharField(max_length=200)
-    city = models.CharField(max_length=50)
-    mobile = models.IntegerField(default=0)
+    city = models.CharField(max_length=50) 
+    mobile = models.IntegerField(default=0) 
     zipcode = models.IntegerField()
     state = models.CharField(choices=STATE_CHOICES, max_length=100)
 
@@ -67,7 +67,7 @@ class Customer(models.Model):
 
 # Modelo para el carrito de compras
 class Cart(models.Model):
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE) 
     product = models.ForeignKey(Product, on_delete=models.CASCADE)
     quantity = models.PositiveIntegerField(default=1)
     
@@ -88,11 +88,11 @@ STATUS_CHOICES = (
 # Modelo para los pagos
 class Payment(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    amount = models.FloatField()
-    razorpay_order_id = models.CharField(max_length=100, blank=True, null=True)
-    razorpay_payment_status = models.CharField(max_length=100, blank=True, null=True)
+    amount = models.FloatField() 
+    razorpay_order_id = models.CharField(max_length=100, blank=True, null=True) 
+    razorpay_payment_status = models.CharField(max_length=100, blank=True, null=True) 
     razorpay_payment_id = models.CharField(max_length=100, blank=True, null=True)
-    paid = models.BooleanField(default=False)
+    paid = models.BooleanField(default=False) 
 
 # Modelo para los pedidos realizados
 class OrderPlaced(models.Model):

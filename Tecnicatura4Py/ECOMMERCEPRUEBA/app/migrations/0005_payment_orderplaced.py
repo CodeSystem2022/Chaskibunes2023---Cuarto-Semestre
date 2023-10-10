@@ -77,33 +77,33 @@ class Migration(migrations.Migration):
                         max_length=50,
                     ),
                 ),
-                (
-                    "customer",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="app.customer"
-                    ),
-                ),
-                (
-                    "payment",
-                    models.ForeignKey(
-                        default="",
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to="app.payment",
-                    ),
-                ),
-                (
-                    "product",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE, to="app.product"
-                    ),
-                ),
-                (
-                    "user",
-                    models.ForeignKey(
-                        on_delete=django.db.models.deletion.CASCADE,
-                        to=settings.AUTH_USER_MODEL,
-                    ),
-                ),
+                ( 
+                    "customer", 
+                    models.ForeignKey( 
+                        on_delete=django.db.models.deletion.CASCADE, to="app.customer" 
+                    ), 
+                ), 
+                ( 
+                    "payment", 
+                    models.ForeignKey( 
+                        default="", 
+                        on_delete=django.db.models.deletion.CASCADE, 
+                        to="app.payment", 
+                    ), 
+                ), 
+                ( 
+                    "product", 
+                    models.ForeignKey( 
+                        on_delete=django.db.models.deletion.CASCADE, to="app.product" 
+                    ), 
+                ), 
+                ( 
+                    "user", 
+                    models.ForeignKey( 
+                        on_delete=django.db.models.deletion.CASCADE, 
+                        to=settings.AUTH_USER_MODEL, 
+                    ), 
+                ), 
             ],
         ),
     ]

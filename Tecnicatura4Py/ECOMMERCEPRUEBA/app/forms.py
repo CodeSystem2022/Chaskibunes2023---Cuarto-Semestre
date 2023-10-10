@@ -18,9 +18,9 @@ class CustomerRegistrationForm(UserCreationForm):
     password1 = forms.CharField(label='Password', widget=forms.PasswordInput(attrs={'class':'form-control'}))
     password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'class':'form-control'}))
     
-    class Meta:
-        model = User
-        fields = ['username', 'email', 'password1', 'password2']
+    class Meta: 
+        model = User 
+        fields = ['username', 'email', 'password1', 'password2'] 
 
 # Formulario de cambio de contraseña personalizado
 class MyPasswordChangeForm(PasswordChangeForm):
@@ -28,14 +28,14 @@ class MyPasswordChangeForm(PasswordChangeForm):
     new_password1 = forms.CharField(label='New Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))      
     new_password2 = forms.CharField(label='Confirm Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))   
 
-# Formulario de restablecimiento de contraseña personalizado
-class MyPasswordResetForm(PasswordResetForm):
-    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'}))
+# Formulario de restablecimiento de contraseña personalizado 
+class MyPasswordResetForm(PasswordResetForm): 
+    email = forms.EmailField(widget=forms.EmailInput(attrs={'class':'form-control'})) 
 
 # Formulario de configuración de nueva contraseña personalizado
 class MySetPasswordForm(SetPasswordForm):
     new_password1 = forms.CharField(label='New Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))      
-    new_password2 = forms.CharField(label='Confirm New Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))  
+    new_password2 = forms.CharField(label='Confirm New Password', widget=forms.PasswordInput(attrs={'autocomplete':'current-password','class':'form-control'}))   
 
 # Formulario de perfil de cliente
 class CustomerProfileForm(forms.ModelForm):
@@ -43,9 +43,9 @@ class CustomerProfileForm(forms.ModelForm):
         model = Customer
         fields = ['name', 'locality', 'city', 'mobile', 'state', 'zipcode']
         widgets = {
-            'name': forms.TextInput(attrs={'class': 'form-control'}),
-            'locality': forms.TextInput(attrs={'class': 'form-control'}),
-            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'name': forms.TextInput(attrs={'class': 'form-control'}), 
+            'locality': forms.TextInput(attrs={'class': 'form-control'}), 
+            'city': forms.TextInput(attrs={'class': 'form-control'}), 
             'mobile': forms.NumberInput(attrs={'class': 'form-control'}),
             'state': forms.Select(attrs={'class': 'form-control'}),
             'zipcode': forms.NumberInput(attrs={'class': 'form-control'}),
