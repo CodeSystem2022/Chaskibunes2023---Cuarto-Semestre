@@ -30,12 +30,15 @@ function conversacion(nombre, veces, miCallback) {
 } 
  
 //--Proceso principal
-console.log("Inciando el proceso... ");
-hola("Ariel", function (nombre) {
+console.log("Inciando el proceso...  ");
+hola("Ariel ", function (nombre) {
   conversacion(nombre, 4, function () {
-    console.log("Terminando el proceso...");
+    console.log("Terminando el proceso... ");
   });
 });
+
+
+///bloque comentado
 // hola("Carlos", function (nombre) {
 //   hablar(function () {
 //     hablar(function () {
