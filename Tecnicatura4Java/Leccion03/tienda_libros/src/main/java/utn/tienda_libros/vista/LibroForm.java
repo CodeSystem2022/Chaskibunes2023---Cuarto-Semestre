@@ -1,69 +1,69 @@
-package utn.tienda_libros.vista;
+package utn.tienda_libros.vista; 
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-import utn.tienda_libros.modelo.Libro;
-import utn.tienda_libros.servicio.LibroServicio;
+import org.springframework.beans.factory.annotation.Autowired; 
+import org.springframework.stereotype.Component; 
+import utn.tienda_libros.modelo.Libro; 
+import utn.tienda_libros.servicio.LibroServicio; 
 
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
-import java.awt.*;
+import javax.swing.*; 
+import javax.swing.table.DefaultTableModel; 
+import java.awt.*; 
 
-@Component
-public class LibroForm extends JFrame {
-    LibroServicio libroServicio;
-    private JPanel panel;
-    private JTextField libroTexto;
-    private JLabel Autor;
-    private JLabel Libro;
-    private JTextField precioTexto;
-    private JLabel Existencias;
-    private JTextField existenciasTexto;
-    private JLabel tiendaDeLibrosLabel;
-    private JTable tiendaDeLibrosTable;
-    private JButton agregarButton;
-    private JButton modificarButton;
+@Component 
+public class LibroForm extends JFrame { 
+    LibroServicio libroServicio; 
+    private JPanel panel; 
+    private JTextField libroTexto; 
+    private JLabel Autor; 
+    private JLabel Libro; 
+    private JTextField precioTexto; 
+    private JLabel Existencias; 
+    private JTextField existenciasTexto; 
+    private JLabel tiendaDeLibrosLabel; 
+    private JTable tiendaDeLibrosTable; 
+    private JButton agregarButton; 
+    private JButton modificarButton;  
     private JButton eliminarButton;
-    private JTextField autorTexto;
-    private JTable tablaLibros;
+    private JTextField autorTexto; 
+    private JTable tablaLibros; 
 
     private DefaultTableModel tablaModeloLibros;
 
+
     @Autowired
-    public LibroForm(LibroServicio libroServicio){
-        this.libroServicio = libroServicio;
-        iniciarForm();
-        agregarButton.addActionListener(e -> agregarLibro());
-    }
-
-
+    public LibroForm(LibroServicio libroServicio){ 
+         this.libroServicio = libroServicio; 
+        iniciarForm(); 
+        agregarButton.addActionListener(e -> agregarLibro()); 
+    } 
 
     private void iniciarForm(){
-        setContentPane(panel);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
-        setSize(900, 700);
-        //Para obtener las dimenciones de la ventana
-        Toolkit toolkit = Toolkit.getDefaultToolkit();
-        Dimension tamanioPantalla = Toolkit.getDefaultToolkit().getScreenSize();
-        int x = (tamanioPantalla.width - getWidth()/2);
-        int y = (tamanioPantalla.height - getHeight()/2);
-        setLocation(x, y);
-    }
+        setContentPane(panel); 
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); 
+        setVisible(true); 
+        setSize(900, 700); 
+        //Para obtener las dimensiones de la ventana 
+        Toolkit toolkit = Toolkit.getDefaultToolkit(); 
+        Dimension tamanioPantalla = Toolkit.getDefaultToolkit().getScreenSize(); 
+        int x = (tamanioPantalla.width - getWidth()/2); 
+        int y = (tamanioPantalla.height - getHeight()/2); 
+        setLocation(x, y); 
+    } 
 
-    private void agregarLibro(){
-        //Leer los valores del formulario
-        if(libroTexto.getText().equals("")){
-            mostrarMensaje("Ingresa el nombre del libro");
-            libroTexto.requestFocusInWindow();
-            return;
+
+    private void agregarLibro(){ 
+        //Leer los valores del formulario 
+        if(libroTexto.getText().equals("")){ 
+            mostrarMensaje("Ingresa el nombre del libro"); 
+            libroTexto.requestFocusInWindow(); 
+            return; 
         }
-        var nombreLibro = libroTexto.getText();
-        var autor = autorTexto.getText();
-        var precio = Double.parseDouble(precioTexto.getText());
-        var existencias = Integer.parseInt(existenciasTexto.getText());
+        var nombreLibro = libroTexto.getText(); 
+        var autor = autorTexto.getText(); 
+        var precio = Double.parseDouble(precioTexto.getText()); 
+        var existencias = Integer.parseInt(existenciasTexto.getText()); 
         //Creamos el objeto libro
-        var libro = new Libro(null, nombreLibro, autor, precio, existencias);
+        var libro = new Libro(null, nombreLibro, autor, precio, existencias); 
         // libro.setNombreLibro(nombreLibro);
         // libro.setAutor(autor);
         // libro.setPrecio(precio);
@@ -74,43 +74,45 @@ public class LibroForm extends JFrame {
         listarLibros();
     }
 
-    private void limpiarFormulario() {
-        libroTexto.setText("");
-        autorTexto.setText("");
-        precioTexto.setText("");
-        existenciasTexto.setText("");
+    private void limpiarFormulario() { 
+        libroTexto.setText(""); 
+        autorTexto.setText(""); 
+        precioTexto.setText(""); 
+        existenciasTexto.setText(""); 
     }
 
-    private void mostrarMensaje(String mensaje) {
-        JOptionPane.showMessageDialog(this, mensaje);
+    private void mostrarMensaje(String mensaje) { 
+        JOptionPane.showMessageDialog(this, mensaje); 
     }
 
-    private void createUIComponents() {
-        this.tablaModeloLibros = new DefaultTableModel(0, 5);
-        String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias"};
-        this.tablaModeloLibros.setColumnIdentifiers(cabecera);
-        //Instanciar el objeto de JTable
-        this.tablaLibros = new JTable(tablaModeloLibros);
-        listarLibros();
-    }
-
-
-    private void listarLibros(){
-        //Limpiar la tabla
-        tablaModeloLibros.setRowCount(0);
-        //Obtener los libros de la BD
-        var libros = libroServicio.listarLibros();
-        //Iteramos cada libro
-        libros.forEach((libro -> { //Función lambda
-            //Creamos cada registro para agregarlos a la tabla
+    private void listarLibros(){ 
+        //Limpiar la tabla 
+        tablaModeloLibros.setRowCount(0); 
+        //Obtener los libros de la BD 
+        var libros = libroServicio.listarLibros(); 
+        //Iteramos cada libro 
+        libros.forEach((libro -> { //Función lambda 
+            //Creamos cada registro para agregarlos a la tabla 
             Object [] renglonLibro = {
                     libro.getIdLibro(),
-                    libro.getNombreLibro(),
-                    libro.getAutor(),
-                    libro.getPrecio(),
-                    libro.getExistencias(),
+                    libro.getNombreLibro(), 
+                    libro.getAutor(), 
+                    libro.getPrecio(), 
+                    libro.getExistencias(), 
             };
-            this.tablaModeloLibros.addRow(renglonLibro);
+            this.tablaModeloLibros.addRow(renglonLibro); 
         }));
     }
+
+    private void createUIComponents() { 
+        this.tablaModeloLibros = new DefaultTableModel(0, 5); 
+        String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias" };
+        this.tablaModeloLibros.setColumnIdentifiers(cabecera); 
+        //Instanciar el objeto de JTable
+        this.tablaLibros = new JTable(tablaModeloLibros);
+        listarLibros(); 
+    }
+
+
+    
 }
