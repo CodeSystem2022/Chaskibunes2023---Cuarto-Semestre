@@ -8,6 +8,7 @@ import java.util.Date;
 @Data
 public class TaskResponseDTO {
 
+    //atributos
     private Long id;
     private String title;
     private Date date;

@@ -10,12 +10,16 @@ import java.util.Date;
 @Data
 public class TaskRequestDTO {
 
-    @NotNull
-    private String title;
-    @NotNull
-    private LocalDateTime createdDate;
-    @NotNull
-    private Date date;
-    @NotNull
-    private LocalTime time;
+    //atributos
+    @NotNull 
+    private String title; 
+
+    @NotNull 
+    private LocalDateTime createdDate; 
+
+    @NotNull 
+    private Date date; 
+
+    @NotNull 
+    private LocalTime time; 
 }
