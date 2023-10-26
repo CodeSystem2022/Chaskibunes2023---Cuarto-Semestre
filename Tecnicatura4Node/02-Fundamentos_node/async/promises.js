@@ -26,7 +26,9 @@ function adios(nombre) {
     }, 1000);
   });
 }
+
 //Llamamos a la función
+
 console.log("Iniciando el proceso...");
 hola("Ariel")
   .then(hablar)
