@@ -116,12 +116,15 @@ public class LibroForm extends JFrame {
             mostrarMensaje("Debes seleccionar un registro en la tabla");
         }
         else{
+
             //Verificamos que nombre del libro no sea nulo
+
             if(libroTexto.getText().equals("")){
                 mostrarMensaje("Digite el nombre del libro...");
                 libroTexto.requestFocusInWindow();
                 return;
             }
+
             //Llamamos el objeto libro a actualizar
             int idLibro = Integer.parseInt(idTexto.getText());
             var nombreLibro = libroTexto.getText();
@@ -138,6 +141,7 @@ public class LibroForm extends JFrame {
 
     private void eliminarLibro(){
         var renglon = tablaLibros.getSelectedRow();
+
         if(renglon != 1 ){
             String idLibro = tablaLibros.getModel().getValueAt(renglon, 0).toString();
             var libro = new Libro();
@@ -146,8 +150,8 @@ public class LibroForm extends JFrame {
             mostrarMensaje("Libro "+idLibro+" ELIMINADO");
             limpiarFormulario();
             listarLibros();
-        }
-        else{
+
+        }else{
             mostrarMensaje("No se ha seleccionado ningun libro de la tabla a eliminar");
         }
     }
@@ -192,7 +196,8 @@ public class LibroForm extends JFrame {
             }
         };
         String[] cabecera = {"id", "Libro", "Autor", "Precio", "Existencias" };
-        this.tablaModeloLibros.setColumnIdentifiers(cabecera); 
+        this.tablaModeloLibros.setColumnIdentifiers(cabecera);
+         
         //Instanciar el objeto de JTable
         this.tablaLibros = new JTable(tablaModeloLibros);
         //Evitamos que se seleccionen varios registrso
