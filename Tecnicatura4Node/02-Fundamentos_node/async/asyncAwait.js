@@ -14,7 +14,7 @@ async function hola(nombre) {
 
 async function hablar(nombre) {
   return new Promise((resolve, reject) => {
-    //Usamos la sintaxis ES6
+    // Usamos la sintaxis ES6
     setTimeout(function () {
       console.log("bla bla bla bla");
       //resolve(nombre);
