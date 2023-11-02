@@ -18,5 +18,5 @@ hola("Carlos", function (nombre) {
   }); 
 }); 
  
-// hola('Carlos', function({})); 
-// adios('Carlos', function(){}); 
+//hola('Carlos', function({})); 
+//adios('Carlos', function(){}); 
