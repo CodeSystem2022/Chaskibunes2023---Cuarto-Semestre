@@ -27,7 +27,7 @@ function adios(nombre) {
   });
 }
 
-//Llamamos a la función
+// Llamamos a la función
 
 console.log("Iniciando el proceso...");
 hola("Ariel")
