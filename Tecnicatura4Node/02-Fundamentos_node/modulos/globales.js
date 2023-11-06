@@ -27,13 +27,13 @@ let intervalo = setInterval(() => {
     i++; 
 }, 1000);
 
-setImmediate(() => {
-    console.log('Saludo inmediato')
-});
-
-// require();
-
-console.log(__filname);
-
-globalThis.miVariable = 'mi variable global';
-console.log(miVariable)
+setImmediate(() => { 
+    console.log('Saludo inmediato') 
+}); 
+ 
+// require(); 
+ 
+console.log(__filname); 
+ 
+globalThis.miVariable = 'mi variable global'; 
+console.log(miVariable) 

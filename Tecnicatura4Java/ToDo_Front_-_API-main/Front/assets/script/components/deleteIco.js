@@ -9,11 +9,12 @@ const createDelIcon = (id) => {
     return i; //devolvemos el valor de i
   };
   
-  const dumpTask = (id) =>{
-    const list = document.querySelector("[data-list]"); //seleccionamos la lista
-    deleteTask(id);
-    list.innerHTML = "";
-    displayTasks(); //llamado, para mostrar las nuevas tareas modificadas
-  }
-
-  export default createDelIcon;
+  const dumpTask = (id) =>{ 
+    const list = document.querySelector("[data-list]"); //seleccionamos la lista 
+    deleteTask(id); 
+    list.innerHTML = ""; 
+    displayTasks(); //llamado, para mostrar las nuevas tareas modificadas 
+  } 
+ 
+  export default createDelIcon; 
+  

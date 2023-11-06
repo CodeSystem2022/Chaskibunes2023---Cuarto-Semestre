@@ -17,12 +17,12 @@ import UserProvider from "./context/UserProvider";
 // Crea una instancia de createRoot para renderizar la aplicación en el elemento "root".
 const rootElement = createRoot(root);
 
-rootElement.render(
-  <BrowserRouter>
-    {/* Envuelve la aplicación con el componente UserProvider para proporcionar información de usuario */}
-    <UserProvider>
-      {/* Dentro del BrowserRouter, define el componente principal de la aplicación */}
-      <App />
-    </UserProvider>
-  </BrowserRouter>
+rootElement.render( 
+  <BrowserRouter> 
+    {/* Envuelve la aplicación con el componente UserProvider para proporcionar información de usuario */} 
+    <UserProvider> 
+      {/* Dentro del BrowserRouter, define el componente principal de la aplicación */} 
+      <App /> 
+    </UserProvider> 
+  </BrowserRouter> 
 );

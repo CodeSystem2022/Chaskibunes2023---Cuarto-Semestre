@@ -18,26 +18,26 @@ const Login = () => {
     }
   };
 
-  return (
-    <>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Ingrese email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Ingrese Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
-    </>
-  );
+  return ( 
+    <> 
+      <h1>Login</h1> 
+      <form onSubmit={handleSubmit}> 
+        <input 
+          type="email" 
+          placeholder="Ingrese email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        /> 
+        <input 
+          type="password" 
+          placeholder="Ingrese Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+        /> 
+        <button type="submit">Login</button> 
+      </form> 
+    </> 
+  ); 
 };
 
 export default Login;

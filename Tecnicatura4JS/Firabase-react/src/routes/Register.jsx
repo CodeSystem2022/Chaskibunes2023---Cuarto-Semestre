@@ -28,26 +28,26 @@ const Register = () => {
     }
   };
 
-  return (
-    <>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="email"
-          placeholder="Ingrese email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Ingrese Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Register</button>
-      </form>
-    </>
-  );
+  return ( 
+    <> 
+      <h1>Register</h1> 
+      <form onSubmit={handleSubmit}> 
+        <input 
+          type="email" 
+          placeholder="Ingrese email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        /> 
+        <input 
+          type="password"  
+          placeholder="Ingrese Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+        /> 
+        <button type="submit">Register</button> 
+      </form> 
+    </> 
+  ); 
 };
 
 export default Register;
