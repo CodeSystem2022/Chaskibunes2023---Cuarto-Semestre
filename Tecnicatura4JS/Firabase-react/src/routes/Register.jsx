@@ -49,6 +49,7 @@ const Register = () => {
     }
   };
 
+<<<<<<< HEAD
   // Renderiza el componente del formulario de registro.
   return (
     <>
@@ -111,6 +112,28 @@ const Register = () => {
       </p>
     </>
   );
+=======
+  return ( 
+    <> 
+      <h1>Register</h1> 
+      <form onSubmit={handleSubmit}> 
+        <input 
+          type="email" 
+          placeholder="Ingrese email" 
+          value={email} 
+          onChange={(e) => setEmail(e.target.value)} 
+        /> 
+        <input 
+          type="password"  
+          placeholder="Ingrese Password" 
+          value={password} 
+          onChange={(e) => setPassword(e.target.value)} 
+        /> 
+        <button type="submit">Register</button> 
+      </form> 
+    </> 
+  ); 
+>>>>>>> 3b6d3b4710a40e764b9dadc8ffe306a8cc67a00a
 };
 
 export default Register;
