@@ -1,52 +1,47 @@
-import { createContext, useEffect, useState } from "react";
-import PropTypes from "prop-types";
+import { auth } from "../firabase.js"; // Importa la instancia de autenticación de Firebase.
 import {
   createUserWithEmailAndPassword,
   onAuthStateChanged,
   signInWithEmailAndPassword,
   signOut,
 } from "firebase/auth";
-import { auth } from "../firabase";
-export const UserContext = createContext();
+import { createContext, useEffect, useState } from "react"; // Importa las funciones "createContext" y "useState" de la biblioteca React.
+
+export const UserContext = createContext(); // Crea un contexto de usuario llamado "UserContext".
 
 const UserProvider = ({ children }) => {
-  const [user, setUser] = useState(false); // Utiliza "useState" para definir el estado del usuario con un valor inicial
+  const [user, setUser] = useState(false); // Utiliza "useState" para definir el estado del usuario con un valor inicial de "false".
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      // Este método está pendiente si el usuario está logueado o no
-      console.log();
+    const unsuscribe = onAuthStateChanged(auth, (user) => {
+      // este metodo esta pendiente si el usuario esta logueado o no
+      console.log(user);
       if (user) {
         const { email, photoURL, displayName, uid } = user;
-        setUser({ email, photoURL, displayName, uid });
+        setUser({ email, photoURL, displayName, uid }); // con esto si existe un usuario le pasamos esos datos
       } else {
         setUser(null);
       }
     });
-    return () => unsubscribe(); // Cancela la suscripción cuando el componente se desmonta
-  }, []); // Se ejecuta solo una vez al inicio para obtener el usuario usuario que esta activo en el backend, se ejecuta solo una vez al inicio para obtener el usuario
+    return () => unsuscribe(); // Cancela la suscripción cuando el componente se desmonta
+  }, []); // nos va a traer al usuario que esta activo en el backend, Se ejecuta solo una vez al inicio para obtener el usuario actual
 
-  const userRegister = (email, password) =>
-    createUserWithEmailAndPassword(auth, email, password);
+  const registerUser = (email, password) =>
+    createUserWithEmailAndPassword(auth, email, password); // con este metodo registramos al usuario
 
   const loginUser = (email, password) =>
-    signInWithEmailAndPassword(auth, email, password); //Con este metodo logueamos al usuario
+    signInWithEmailAndPassword(auth, email, password); // con este metodo logueamos al usuario
 
-  const signOutUser = () => signOut(auth);
+  const signOutUser = () => signOut(auth); // con este metodo cerramos sesion al usuario
 
   return (
     <UserContext.Provider
-      value={{ user, setUser, userRegister, loginUser, signOutUser }}
+      value={{ user, setUser, registerUser, loginUser, signOutUser }}
     >
-      {children}
-      {/* Envuleve los componentes hijos con el contexto "UserContext.Provider" y proporciona el valor del estado del usuario */}
+      {children}{" "}
+      {/*Envuelve los componentes hijos con el contexto "UserContext.Provider" y proporciona el valor del estado del usuario y la función para establecerlo.*/}
     </UserContext.Provider>
   );
-};
-
-//Agrega la validación de props
-UserProvider.propTypes = {
-  children: PropTypes.node.isRequired, // valida que se pase 'children' como pro
 };
 
 export default UserProvider;
