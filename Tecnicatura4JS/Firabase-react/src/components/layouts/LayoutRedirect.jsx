@@ -1,5 +1,5 @@
 //import { nanoid } from "nanoid";
-import { Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom"; //importar bibliotecas
 import { useFirestore } from "../../hooks/useFirestore.js";
 import { useEffect, useState } from "react";
 import Title from "../Title";
@@ -27,4 +27,4 @@ const LayoutRedirect = () => {
     </div>
   );
 };
-export default LayoutRedirect;
+  export default LayoutRedirect;
