@@ -13,7 +13,9 @@ const baseButtonClass =
   "focus:outline-none text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 mb-2";
 
 const Button = ({ text, type, color = "purple", loading, onClick }) => {
-  // Si la propiedad "loading" es verdadera, muestra un componente de carga y sale de la función.
+  //  Si la propiedad "loading" es verdadera, muestra un componente 
+  //  de carga y sale de la función.
+  
   if (loading) return <ButtonLoading />;
 
   // Obtiene la clase de color del objeto colorClasses.
